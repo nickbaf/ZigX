@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\backroundMusic.cs" />
     <Compile Include="Assets\Script\CharController.cs" />
     <Compile Include="Assets\Script\Following.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
