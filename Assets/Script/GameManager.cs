@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-
+        FindObjectOfType<road>().StartBuilding();
         gStarted = true;
     }
 
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         if (score > getHighScore())
         {
             PlayerPrefs.SetInt("HighScore", score);
-            HighScoreText.text = "High Score: " + score.ToString(); ; 
+            HighScoreText.text = "High Score: " + score.ToString(); 
         }
     }
 
