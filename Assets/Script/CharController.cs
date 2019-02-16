@@ -9,16 +9,29 @@ public class CharController : MonoBehaviour
 
     public Transform aRay;
     private Animator anime;
+
+
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Awake()
     {
         theBody = GetComponent<Rigidbody>();
         anime = GetComponent<Animator>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void FixedUpdate()
     {
-        theBody.transform.position = transform.position + transform.forward * 2 * Time.deltaTime;
+
+        if (!gameManager.gStarted)
+        {
+            return;
+        }
+        else {
+
+            anime.SetTrigger("hasStarted");
+            theBody.transform.position = transform.position + transform.forward * 2 * Time.deltaTime;
+        }
 
     }
     // Update is called once per frame
