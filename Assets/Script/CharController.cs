@@ -6,11 +6,14 @@ public class CharController : MonoBehaviour
 {
     private Rigidbody theBody;
     private bool walkingRight = true;
+
+    public Transform aRay;
+    private Animator anime;
     // Start is called before the first frame update
     void Awake()
     {
         theBody = GetComponent<Rigidbody>();
-
+        anime = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -23,6 +26,12 @@ public class CharController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)){
             Turn();
+        }
+
+        RaycastHit hit;
+        if(!Physics.Raycast(aRay.position,-transform.up,out hit, Mathf.Infinity)) //if there is no hit on ground
+        {
+            anime.SetTrigger("hasGround");
         }
     }
 
