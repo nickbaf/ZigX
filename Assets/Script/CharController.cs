@@ -46,6 +46,11 @@ public class CharController : MonoBehaviour
         {
             anime.SetTrigger("hasGround");
         }
+
+        if (transform.position.y < -2)
+        {
+            gameManager.EndGame();
+        }
     }
 
     private void Turn()
