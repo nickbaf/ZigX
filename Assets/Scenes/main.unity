@@ -2006,6 +2006,12 @@ PrefabInstance:
       propertyPath: aRay
       value: 
       objectReference: {fileID: 388599651}
+    - target: {fileID: 2437958984213182935, guid: 02f9269ca860d4d7aa75d02d92169db3,
+        type: 3}
+      propertyPath: crystal
+      value: 
+      objectReference: {fileID: 2846343338934774902, guid: 0c39e6378a8f24d11ba9c4b8b69c7909,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02f9269ca860d4d7aa75d02d92169db3, type: 3}
 --- !u!4 &4007470365033904847 stripped

@@ -9,7 +9,7 @@ public class CharController : MonoBehaviour
 
     public Transform aRay;
     private Animator anime;
-
+    public GameObject crystal;
 
     private GameManager gameManager;
     // Start is called before the first frame update
@@ -76,8 +76,11 @@ public class CharController : MonoBehaviour
     {
         if (other.tag == "Crystal")
         {
-            Destroy(other.gameObject);
+
             gameManager.increaseScore();
+            GameObject g = Instantiate(crystal, aRay.transform.position, Quaternion.identity);
+            Destroy(g,2);
+            Destroy(other.gameObject);
         }
     }
 }
